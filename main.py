@@ -4,6 +4,9 @@ from fastapi import FastAPI
 
 import random
 
+import uvicorn
+
+
 app = FastAPI()
 
 
@@ -67,3 +70,6 @@ def read_item(year: int, entity: str):
         return {
             'message': 'incorrect data'
         }
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=80)
